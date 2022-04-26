@@ -1,6 +1,6 @@
 const toggle = document.querySelector('#plan-toggle');
-const monthly = document.querySelectorAll('#monthly');
-const annually = document.querySelectorAll('#annually');
+const monthly = document.querySelectorAll('.price span.monthly');
+const annually = document.querySelectorAll('.price span.annually');
 
 toggle.addEventListener('change', (event) => {
   if (event.target.checked) {
