@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+:root {
+  --linear-gradient: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+  --toggle-hover: hsl(235, 100%, 88%);
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+  background-size: 22%;
+  background-repeat: no-repeat;
+  background-position: 100% 0, 0 100%;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 200px 1fr 100px;
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+header h1 {
+  color: var(--grayish-blue);
+  font-size: 28px;
+}
+
+.toggle-wrapper {
+  color: var(--light-grayish-blue);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 16px;
+}
+
+.toggle-wrapper input {
+  display: none;
+}
+
+.toggle-wrapper label {
+  width: 46px;
+  height: 27px;
+  border-radius: 16px;
+  background-image: var(--linear-gradient);
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-wrapper label:hover {
+  background: var(--toggle-hover);
+}
+
+.toggle-wrapper label::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  right: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+
+.toggle-wrapper input:checked + label::before {
+  transform: translate(-19px, -50%);
+}
+
+.toggle-wrapper input:checked ~ span#monthly {
+  display: none;
+}
+
+.toggle-wrapper input:checked ~ span#annually {
+  display: none;
+}
+
+#annually {
+  display: none;
+}
+
+main {
+  display: flex;
+}
+
+footer {
+  text-align: center;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
